@@ -1,0 +1,16 @@
+/* styles/Contact.module.css */
+.contact {
+    padding: 2rem;
+    background-color: #e9ecef;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 2rem;
+  }
+  
+  .contact p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
