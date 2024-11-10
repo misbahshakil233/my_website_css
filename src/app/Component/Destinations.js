@@ -1,4 +1,6 @@
-// src/components/Destinations.js
+// src/app/Component/Destinations.js
+
+import Image from 'next/image';
 
 export default function Destinations() {
   return (
@@ -6,21 +8,21 @@ export default function Destinations() {
       <h2 style={sectionTitleStyle}>Popular Destinations</h2>
       <div style={galleryStyle}>
         <div style={cardStyle}>
-          <img src="/paris.jpeg" alt="Paris" style={imageStyle} />
+          <Image src="/paris.jpeg" alt="Paris" style={imageStyle} width={300} height={200} />
           <div style={cardContentStyle}>
             <h3 style={cardTitleStyle}>Paris</h3>
             <p style={cardDescriptionStyle}>The city of lights and love.</p>
           </div>
         </div>
         <div style={cardStyle}>
-          <img src="/toko.jpeg" alt="Tokyo" style={imageStyle} />
+          <Image src="/tokyo.jpeg" alt="Tokyo" style={imageStyle} width={300} height={200} />
           <div style={cardContentStyle}>
             <h3 style={cardTitleStyle}>Tokyo</h3>
             <p style={cardDescriptionStyle}>A vibrant metropolis full of life.</p>
           </div>
         </div>
         <div style={cardStyle}>
-          <img src="/newyork.jpeg" alt="New York" style={imageStyle} />
+          <Image src="/newyork.jpeg" alt="New York" style={imageStyle} width={300} height={200} />
           <div style={cardContentStyle}>
             <h3 style={cardTitleStyle}>New York</h3>
             <p style={cardDescriptionStyle}>The city that never sleeps.</p>
@@ -77,8 +79,6 @@ cardStyle[':hover'] = {
 
 // Image styling
 const imageStyle = {
-  width: '100%',
-  height: '200px',
   objectFit: 'cover',
 };
 
