@@ -7,7 +7,7 @@ import Tips from './Component/Tips'
 import About from './Component/About'
 import Contact from './Component/Contact'
 import Footer from './Component/Footer'
-import Travel from './Component/Travel'
+
 export default function Home() {
   return (
     <div>

@@ -39,13 +39,13 @@ export default function About() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
           <div style={{ background: 'white', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', maxWidth: '300px' }}>
             <p style={{ fontStyle: 'italic', marginBottom: '10px' }}>
-              "This team is amazing! Highly recommended."
+              This team is amazing! Highly recommended.
             </p>
             <span style={{ color: '#777', fontSize: '0.9rem' }}>- John Doe</span>
           </div>
           <div style={{ background: 'white', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', maxWidth: '300px' }}>
             <p style={{ fontStyle: 'italic', marginBottom: '10px' }}>
-              "Their services exceeded our expectations!"
+              Their services exceeded our expectations!
             </p>
             <span style={{ color: '#777', fontSize: '0.9rem' }}>- Jane Smith</span>
           </div>
