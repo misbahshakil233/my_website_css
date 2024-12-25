@@ -1,31 +1,73 @@
-// src/components/Navbar.js
 "use client"; // Add this at the top for client components
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Check screen size for responsive behavior
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <nav style={styles.navbar}>
       <h1 style={styles.logo}>Travel Guide</h1>
-      <button onClick={toggleMenu} style={styles.hamburger}>
-        {menuOpen ? "✖" : "☰"}
-      </button>
-      <ul style={{ 
-        ...styles.navLinks, 
-        ...(menuOpen ? styles.navOpen : styles.navCollapsed) 
-      }}>
-        <li><Link href="#home" style={styles.link}>Home</Link></li>
-        <li><Link href="#destinations" style={styles.link}>Destinations</Link></li>
-        <li><Link href="#featured" style={styles.link}>Featured</Link></li>
-        <li><Link href="#tips" style={styles.link}>Travel Tips</Link></li>
-        <li><Link href="#contact" style={styles.link}>Contact</Link></li>
+      {isSmallScreen && (
+        <button onClick={toggleMenu} style={styles.hamburger}>
+          {menuOpen ? "✖" : "☰"}
+        </button>
+      )}
+      <ul
+        style={{
+          ...styles.navLinks,
+          ...(isSmallScreen
+            ? menuOpen
+              ? styles.navOpen
+              : styles.navCollapsed
+            : {}),
+        }}
+      >
+        <li>
+          <Link href="#home" style={styles.link}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link href="#destinations" style={styles.link}>
+            Destinations
+          </Link>
+        </li>
+        <li>
+          <Link href="#featured" style={styles.link}>
+            Featured
+          </Link>
+        </li>
+        <li>
+          <Link href="#tips" style={styles.link}>
+            Travel Tips
+          </Link>
+        </li>
+        <li>
+          <Link href="#contact" style={styles.link}>
+            Contact
+          </Link>
+        </li>
       </ul>
     </nav>
   );
@@ -47,7 +89,7 @@ const styles = {
     fontWeight: "bold",
   },
   hamburger: {
-    display: "none",
+    display: "block",
     fontSize: "1.5rem",
     color: "white",
     backgroundColor: "transparent",
@@ -78,14 +120,5 @@ const styles = {
   link: {
     color: "white",
     textDecoration: "none",
-  },
-  // Media query styles
-  "@media (max-width: 768px)": {
-    navLinks: {
-      display: "none",
-    },
-    hamburger: {
-      display: "block",
-    },
   },
 };
