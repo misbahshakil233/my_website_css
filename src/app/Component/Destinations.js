@@ -15,7 +15,7 @@ export default function Destinations() {
           </div>
         </div>
         <div style={cardStyle}>
-          <Image src="/tokyo.jpeg" alt="Tokyo" style={imageStyle} width={300} height={200} />
+          <Image src="/toko.jpeg" alt="Tokyo" style={imageStyle} width={300} height={200} />
           <div style={cardContentStyle}>
             <h3 style={cardTitleStyle}>Tokyo</h3>
             <p style={cardDescriptionStyle}>A vibrant metropolis full of life.</p>
